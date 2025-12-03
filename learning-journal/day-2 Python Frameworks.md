@@ -25,3 +25,10 @@ An AI agent can:
 - Use another tool → send an email
 
 - Decide → confirm when done
+
+**Just like a house needs invisible pipes behind the walls, an AI agent needs invisible “pipes” to connect LLM → memory → tools → control logic.**
+**Frameworks build these pipes for you.**
+
+AI agent : 
+
+A smart assistant that uses LLM + tools to do tasks.
