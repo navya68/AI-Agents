@@ -15,7 +15,9 @@ It is like a blueprint that knows how to talk to OpenAI servers.
 - get embeddings
 
 3. You give API key TO THAT OBJECT
+   
 Why?
+
 Because this object needs identity to communicate with the server
 
 🔹 OpenAI is a special class
@@ -28,12 +30,18 @@ class Car:
 
 Instead, this class has code inside that knows how to:
 
-make internet requests
+- make internet requests
 
-talk to OpenAI server
+- talk to OpenAI server
 
-send API calls
+- send API calls
 
-format responses
+- format responses
 
-validate authentication
+- validate authentication
+
+client = OpenAI(api_key)
+here the object client is created for the class OpenAI where the object client is storing the API_Key(a pass to access the openai server)
+like in this
+client.response.create(chat)
+here the client needs a pass in order to access the response method.
