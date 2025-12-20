@@ -90,9 +90,10 @@ There are two types:
 
 ## ✔ User Prompt
 What the user types
+
 Example: “Explain AI agents.”
 
-✔ Developer Prompt Template
+## ✔ Developer Prompt Template
 
 A fixed structure created by YOU to guide the agent.
 Example:
@@ -114,11 +115,15 @@ This decides how the agent thinks before acting.
 **Think → Act → Think → Act**
 
 It thinks a bit, acts, thinks again, acts again.
+
 Example:
+
 "Find nearby pizza place and book a table."
 
 1.Think: Search places → Action: Search
+
 2.Think: Compare → Action: Compare
+
 3.Think: Book → Action: Book
 
 *It alternates thinking + action step by step.*
@@ -141,6 +146,7 @@ Does everything at once based on the plan.
 **Difference:**
 
 ReAct → Think + Act mixed
+
 Plan & Execute → All thinking first, then acting
 
 **3. Reflection**
@@ -333,3 +339,203 @@ This is the cycle every agent follows:
 4. Repeat until the task is done
 
 *This loop makes the agent dynamic and autonomous.*
+
+**The control loop is a conceptual model; steps repeat as needed for the task, but observation after action always remains constant.**
+
+Example: Going to college
+
+Step 1: Planning (happens once)
+
+You think:
+
+- Wake up
+
+- Get ready
+
+- Travel
+
+- Attend class
+
+This is your plan.
+
+Step 2: Execution (cannot happen at once)
+
+Can you wake up, travel, and attend class all at the same time?
+❌ No.
+
+You must do it step by step.
+
+After each step:
+
+- You see what happened
+
+- Then do the next step
+
+This is the loop.
+
+Now map this to an AI agent
+
+🔹 PLAN (Think once)
+
+- Agent creates a plan:
+
+- Search information
+
+- Read results
+
+- Answer user
+
+This is THINK (planning).
+
+🔹 EXECUTION LOOP (very important)
+
+Now the agent does:
+
+```sh
+Act: search
+Observe: did search succeed?
+
+Act: read results
+Observe: what did I get?
+
+Act: answer
+Observe: task done
+```
+
+So the loop becomes:
+
+```sh
+ACT → OBSERVE → ACT → OBSERVE
+```
+
+Thinking is mostly already done.
+
+Why OBSERVE is required
+
+After every action, the agent must check:
+
+- Did the tool work?
+
+- Did I get data?
+
+- Is the task finished?
+
+Without this:
+
+- Agent may fail silently
+
+- Agent cannot adapt
+
+**Why we still call it a “control loop**
+
+Because the agent is:
+
+- Controlling its actions
+
+- Based on feedback
+
+- Until the goal is achieved
+
+Even if thinking happened earlier.
+
+- Planning can be one-time, but execution is always step-by-step with feedback.
+
+(Even in plan-and-execute agents, the agent does not act all at once.
+It executes each step one by one, observing the result after every action)
+
+**Now imagine the workflow without repeat**
+
+Flow would be:
+
+```sh
+Observe → Think → Act → Done
+```
+
+This only works if:
+
+- The task is very small
+
+- One action is enough
+
+Example:
+
+“What is 2 + 2?” → answer → done
+
+**What “REPEAT” really means**
+
+It does not mean:
+
+- Repeating the same thing again and again
+
+It means:
+
+- Continue the cycle until the goal is reached
+
+👉 Repeat means repeating the control loop
+
+NOT repeating the same action again and again.
+
+So it can repeat:
+
+- Thinking
+
+- Acting
+
+- Observing
+
+…depending on what is needed next.
+
+```sh
+OBSERVE → THINK → ACT → OBSERVE → THINK → ACT → ...
+(stop when goal is achieved)
+```
+
+**example (simple task)**
+
+Task: “Find today’s weather and summarize it”
+
+First loop
+
+Observe: User asks for weather
+
+Think: I need to search for weather
+
+Act: Call weather API
+
+Second loop
+
+Observe: Weather data received
+
+Think: I should summarize it
+
+Act: Generate summary
+
+Third loop
+
+Observe: Summary created
+
+Think: Task is complete
+
+Act: Return answer → STOP
+
+- The action changed each time
+
+- Thinking changed each time
+
+- The loop repeated, not the same action
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
