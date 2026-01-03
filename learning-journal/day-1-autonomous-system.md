@@ -60,10 +60,15 @@ It chooses:
 ## 5️⃣ Produce final answer
 
 You get a complete travel plan.
+
 ✔ Understood
+
 ✔ Reasoned
+
 ✔ Planned
+
 ✔ Acted
+
 ✔ Delivered
 
 # This is what autonomy looks like.
