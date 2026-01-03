@@ -1,4 +1,4 @@
-API kay is the API of our own AI that we are going to use
+API key is the API of our own AI that we are going to use
 
 1. OpenAI() is a class
 
