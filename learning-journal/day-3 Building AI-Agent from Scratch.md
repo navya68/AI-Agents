@@ -90,5 +90,44 @@ python -m pip install --upgrade pip
 
 All dependencies will now be installed inside the venv folder, isolated from your system Python.
 
+**Now we write the code
+1. We should create main.py where we will be writinng the main code
+
+   ```sh
+from dotenv import load_dotenv
+from pydantic import BaseModel
+from langchain_groq import ChatGroq
+load_dotenv()
+
+##setup LLM
+
+llm = ChatGroq(model="llama-3.1-8b-instant")
+response = llm.invoke("what is your model name")
+print(response)
+```
+
+In my case I am using Groq as it is free to use not just low-cost but free. 
+
+- In the code I am using **load_dotenv** class from **dotenv** this is used to load the environment variables that is .env file.
+  - dotenv ->   Python package that reads .env files
+  - load_dotenv -> Function that loads environment variables from .env into python
+  - Allows python to read API keys in .env
+- **pydantic** -> This python package is used for Data Validation
+- **BaseMode** -> This is a class used to define structured data
+  - Helps define input/output in a clean format
+- langchain_groq -> langchain groq integration
+- ChatGroq -> class that connects to Groq LLMs
+  - This is what actually talks to the AI Models
+
+2. How does the object work why do we actually need it?
+
+   - Python cannot directly talk the AI model that is the LLM. We need a bridge for the communication. That is where we use the object.
+
+   - we are using Groq through Langchain. Langchain is just a python package(library). langchain_groq is a sub-package.
+  
+   - Langchain contains python classes that knows how to talk to different LLMs.
+  
+   - Inorder to access those classes we need an object that is why we create an object and this object uses the methods in the class where the methods internally knows how to connect to the groq server.
+
 
 
