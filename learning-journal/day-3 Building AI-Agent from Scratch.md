@@ -1,4 +1,4 @@
-<img width="365" height="93" alt="image" src="https://github.com/user-attachments/assets/08b4bd09-7090-431e-9174-260e346bedf5" /># Building AI-Agent from scratch 
+# Building AI-Agent from scratch 
 
 First, we should create a virtual environment using venv. This ensures that the required dependencies are installed only for the current project, avoiding conflicts with other projects.
 
