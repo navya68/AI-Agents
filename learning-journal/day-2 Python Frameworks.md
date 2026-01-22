@@ -32,3 +32,24 @@ An AI agent can:
 AI agent : 
 
 A smart assistant that uses LLM + tools to do tasks.
+
+To be more specific:
+
+**A framework has a predefined structure (code + flow) and built-in tools (functions/methods) that make building AI applications easier.**
+
+**This means we don’t need to write the entire code for basic AI tasks such as data handling, model training, evaluation, or inference.
+These functionalities are already implemented inside the framework, and we can directly use them by calling the provided classes and methods.**
+
+ **Based on different requirements, we choose different frameworks.**
+
+ - Easy & quick development → Keras
+   
+ - More control & flexibility → PyTorch
+   
+ - Large-scale production systems → TensorFlow
+   
+ - LLM apps & AI agents → LangChain
+   
+ - Using ready pre-trained models → Hugging Face
+   
+ - Managed AI without training → AWS Bedrock
